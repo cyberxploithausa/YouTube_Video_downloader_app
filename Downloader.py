@@ -9,13 +9,12 @@ root.config(bg="red")
 
 
 def download():
-    #entry.delete(0, END)
     bidiyo = entry.get()
     info_label.config(text="Starting to download...")
     YouTube(bidiyo).streams.first().download()
     info_label2.config(text="Download Successfull")
     time.sleep(2)
-    #root.destroy()
+    #root.destroy() #This will close the app after the video is downloaded successfully. to use it you need to un-comment it 
 
 header = Label(root, text="YouTube Video Downloader", font=("Helvetica", 25, "bold"), fg="red")
 header.pack(pady=20)
@@ -26,7 +25,7 @@ label.pack(pady=20)
 entry = Entry(root, font=("times", 15), width=30)
 entry.pack(pady=20)
 
-button = Button(root, text="Download", bd=3, command=download)
+button = Button(root, text="Download Video", bd=3, command=download)
 button.pack(pady=20)
 
 info_label = Label(root, text="", font=("times", 15, "bold"))
